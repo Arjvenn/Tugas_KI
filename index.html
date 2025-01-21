@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <!-- Tambahkan Logo -->
+      <div class="logo">
+        <img src="Logo-and-Branding-SKINFA .png" alt="Logo Website">
+    </div>
+    <header>
+        <!-- Menu Navigasi -->
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <!-- Slider Container -->
+      <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="WhatsApp Image 2025-01-20 at 18.28.43_6a2bf9c9.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="UNIKOMBandung_631 (1).jpg" alt="Image 2"></div>
+            <div class="slide"><img src="IMG-20250118-WA0154.jpg" alt="Image 3"></div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+            slides.forEach(slide => slide.style.display = "none");
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        function moveSlide(n) {
+            slideIndex += n;
+            let slides = document.querySelectorAll(".slide");
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            if (slideIndex < 1) { slideIndex = slides.length; }
+            slides.forEach(slide => slide.style.display = "none");
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+    
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Hubungi Kami</h2>
+            <div class="icon"><i class="fa fa-map-marker"></i></div>
+            <p>📌Cirebon, Jawa Barat
+            <p>📱 0895383174029</p>
+            <p>✉️ <a href="Areseka79@gmail.com">Areseka79@gmail.com</a></p>
+        </div>
+    </div>
+    <a href="https://wa.me/0895383174029" class="whatsapp-float" target="_blank">
+        <img src="callwhatsapp.png" alt="Hubungi Kami di WhatsApp">
+    </a>
+</body>
+</html>
